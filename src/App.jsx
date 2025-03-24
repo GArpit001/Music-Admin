@@ -3,6 +3,7 @@ import './App.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
 import AddSong from './pages/AddSong';
 import AddAlbum from './pages/AddAlbum';
 import ListSong from './pages/ListSong';
@@ -10,7 +11,7 @@ import ListAlbum from './pages/ListAlbum';
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
 
-export const url = "http://localhost:2356"
+export const url = "https://music-backend-dtzc.onrender.com"
 
 function App() {
 
@@ -26,10 +27,11 @@ function App() {
 
           <Navbar/>
 
-          <div className="pt-6 pl-5 sm:pt-8 sm:pl-12">
+          <div className="pt-6 pl-5 sm:pt-8 sm:pl-12  ">
 
             <Routes>
 
+              <Route path="/" element={<Home />} />
               <Route path="/add-song" element={<AddSong />} />
               <Route path="/add-album" element={<AddAlbum />} />
               <Route path="/list-song" element={<ListSong />} />

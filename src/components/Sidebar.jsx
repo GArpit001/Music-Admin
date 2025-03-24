@@ -1,13 +1,23 @@
 import React from 'react'
 import { assets } from "../assets/assets"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import LOGO  from "../assets/a-logo-of-a-music-player-with-a-play-button-in-the-n18YzA__QzyXkA8MsGKVjA-KgmALzTYTU2-hWV1sbyigA.jpeg"
+import LOGO2  from "../assets/a-music-player-logo-with-a-stylized-musical-note-t-gXeg1E4iQ5i31rXwHgfLLA-KgmALzTYTU2-hWV1sbyigA.jpeg"
+import { unstable_renderSubtreeIntoContainer } from 'react-dom'
 
 const Sidebar = () => {
-    return (
-        <div className='bg-[#003A10] min-h-screen pl-[4vw]'>
-            <img src={assets.logo} className='mt-5 w-[max(10vw,100px)] hidden sm:block' alt="" />
 
-            <img src={assets.logo_small} className='mt-5 w-[max(5vw,40px)] mr-5 sm:hidden block' alt="" />
+    const navigate = useNavigate()
+
+    return (
+        <div className='sidebar-Flow min-h-screen pl-[4vw] border-r-2 border-gray-800'>
+            <img src={LOGO} onClick={()=> navigate("/")} className='mt-5 w-[max(10vw,100px)] hidden sm:block rounded-full' alt="" />
+
+            <img src={LOGO2} onClick={()=> navigate("/")} className='mt-5 w-[max(5vw,40px)] mr-5 sm:hidden block rounded-full' alt="" />
+
+            {/* <h1 className='mt-5 w-[max(10vw,100px)] hidden sm:block text-3xl font-bold '>TUNEWAVE</h1> */}
+
+            {/* https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=646824f2b7b86caffec1d0b16ea77f79 */}
 
 
             <div className='flex flex-col gap-5 mt-10'>
